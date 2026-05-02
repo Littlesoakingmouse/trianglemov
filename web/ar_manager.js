@@ -31,7 +31,7 @@ function setupDPad() {
         if (!btn) return;
         const start = (e) => { e.preventDefault(); moveX = dx; moveY = dy; };
         const end = (e) => { e.preventDefault(); moveX = 0; moveY = 0; };
-        btn.addEventListener('touchstart', start, {passive: false});
+        btn.addEventListener('touchstart', start, { passive: false });
         btn.addEventListener('touchend', end);
         btn.addEventListener('mousedown', start);
         btn.addEventListener('mouseup', end);
@@ -46,16 +46,16 @@ function setupDPad() {
 arButton.disabled = true;
 
 Module.onRuntimeInitialized = () => {
-    logUI("1. WASM loaded. Preparing memory...");
+    logUI(" Đã tải WebAssembly. Chuẩn bị...");
     setupDPad();
-    
+
     viewPtr = Module._malloc(64);
     projPtr = Module._malloc(64);
     hitPtr = Module._malloc(64);
 
     const canvas = document.getElementById('canvas');
     glContext = canvas.getContext('webgl2');
-    
+
     if (!glContext) {
         logUI("Error: WebGL2 context not found!");
         return;
@@ -69,23 +69,23 @@ function checkARSupport() {
     if (navigator.xr) {
         navigator.xr.isSessionSupported('immersive-ar').then((supported) => {
             if (supported) {
-                logUI("AR is Ready! Press the button below.");
+                logUI("AR sẵn sàng! Nhấn nút bên dưới.");
                 arButton.disabled = false;
                 arButton.addEventListener('click', onARButtonClicked);
             } else {
-                logUI("Error: AR not supported on this device.");
+                logUI("Thiết bị không hỗ trợ AR.");
             }
         });
     } else {
-        logUI("Error: WebXR not available.");
+        logUI("Thiết bị không hỗ trợ WebXR.");
     }
 }
 
 function onARButtonClicked() {
     if (!xrSession) {
-        logUI("Preparing WebGL for AR...");
+        logUI("Chuẩn bị WebGL cho AR...");
         glContext.makeXRCompatible().then(() => {
-            logUI("Requesting AR Session...");
+            logUI("Xác định phiên bản AR...");
             return navigator.xr.requestSession('immersive-ar', {
                 requiredFeatures: ['hit-test'],
                 optionalFeatures: ['dom-overlay'],
@@ -101,8 +101,8 @@ function onARButtonClicked() {
 
 function onSessionStarted(session) {
     xrSession = session;
-    arButton.innerText = "End AR Session";
-    logUI("Session Active. Scanning for surfaces...");
+    arButton.innerText = "KẾT THÚC";
+    logUI("Đang tìm bề mặt...");
 
     try {
         const glLayer = new XRWebGLLayer(session, glContext);
@@ -129,9 +129,9 @@ function onSessionStarted(session) {
 }
 
 function onSelect() {
-    if (!isPlaced && hitArray[15] !== 0) { 
+    if (!isPlaced && hitArray[15] !== 0) {
         isPlaced = true;
-        logUI("Game Placed on Table! Enjoy!");
+        logUI("Đã xác định được bề mặt, Bắt đầu chơi!");
         document.getElementById('dpad').style.display = 'flex';
     }
 }
@@ -141,8 +141,8 @@ function onSessionEnded() {
     xrHitTestSource = null;
     isPlaced = false;
     document.getElementById('dpad').style.display = 'none';
-    arButton.innerText = "Start AR Session";
-    logUI("AR Session Ended.");
+    arButton.innerText = "BẮT ĐẦU GAME";
+    logUI("Kết thúc.");
 }
 
 function onXRFrame(time, frame) {
@@ -163,17 +163,17 @@ function onXRFrame(time, frame) {
                 if (hitPose) {
                     hitArray.set(hitPose.transform.matrix);
                     hitFound = true;
-                    logUI("Surface found! Tap to place the game.");
+                    logUI("Tìm thấy bề mặt! Chạm để đặt game.");
                 }
             } else {
-                logUI("Scanning for flat surfaces (Move your phone slowly)...");
+                logUI("Đang tìm kiếm bề mặt (di chuyển điện thoại chậm)...");
             }
         }
 
         if (!hitFound && !isPlaced) {
-            hitArray.fill(0); 
+            hitArray.fill(0);
         }
-        
+
         Module.HEAPF32.set(hitArray, hitPtr / 4);
 
         for (const view of pose.views) {
@@ -194,9 +194,9 @@ function onXRFrame(time, frame) {
                 }
 
                 Module.ccall(
-                    'render_frame', 
-                    null, 
-                    ['number', 'number', 'number', 'number'], 
+                    'render_frame',
+                    null,
+                    ['number', 'number', 'number', 'number'],
                     [viewPtr, projPtr, hitPtr, isPlaced ? 1 : 0]
                 );
             } catch (err) {
