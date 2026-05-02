@@ -1,0 +1,88 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222;
+    color: white;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#ui-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    pointer-events: none; /* Let touches pass through to canvas */
+}
+
+#ar-button {
+    pointer-events: auto;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s;
+}
+
+#ar-button:hover {
+    background-color: #0056b3;
+}
+
+#ar-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+#status {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+#dpad {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    pointer-events: auto;
+}
+.dpad-row {
+    display: flex;
+    gap: 10px;
+}
+.dpad-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 2px solid white;
+    backdrop-filter: blur(4px);
+    touch-action: manipulation; /* Prevent zooming */
+    cursor: pointer;
+}
+.dpad-btn:active {
+    background: rgba(255,255,255,0.5);
+}

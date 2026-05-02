@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>WebAR C++/WASM Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+    <div id="ui-container">
+        <h1>WebAR Game</h1>
+        <button id="ar-button">Start AR Session</button>
+        <p id="status">Loading WASM...</p>
+
+        <div id="dpad" style="display: none;">
+            <div class="dpad-row"><button id="btn-up" class="dpad-btn">↑</button></div>
+            <div class="dpad-row">
+                <button id="btn-left" class="dpad-btn">←</button>
+                <button id="btn-down" class="dpad-btn">↓</button>
+                <button id="btn-right" class="dpad-btn">→</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- The WebGL canvas that Emscripten and WebXR will use -->
+    <canvas id="canvas"></canvas>
+
+    <!-- The compiled Emscripten JS glue code -->
+    <script src="../build/game.js"></script>
+
+    <!-- Our WebXR Manager -->
+    <script src="ar_manager.js"></script>
+
+
+</body>
+
+</html>

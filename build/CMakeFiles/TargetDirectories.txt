@@ -1,0 +1,3 @@
+D:/DAIHOC/Nam3/LTMCPP/trianglemov/build/CMakeFiles/game.dir
+D:/DAIHOC/Nam3/LTMCPP/trianglemov/build/CMakeFiles/edit_cache.dir
+D:/DAIHOC/Nam3/LTMCPP/trianglemov/build/CMakeFiles/rebuild_cache.dir
