@@ -69,7 +69,7 @@ function checkARSupport() {
     if (navigator.xr) {
         navigator.xr.isSessionSupported('immersive-ar').then((supported) => {
             if (supported) {
-                logUI("AR sẵn sàng! Nhấn nút bên dưới.");
+                logUI(" Nhấn nút bắt đầu");
                 arButton.disabled = false;
                 arButton.addEventListener('click', onARButtonClicked);
             } else {
@@ -163,10 +163,10 @@ function onXRFrame(time, frame) {
                 if (hitPose) {
                     hitArray.set(hitPose.transform.matrix);
                     hitFound = true;
-                    logUI("Tìm thấy bề mặt! Chạm để đặt game.");
+                    logUI("Tìm thấy bề mặt, Chạm để bắt đầu game.");
                 }
             } else {
-                logUI("Đang tìm kiếm bề mặt (di chuyển điện thoại chậm)...");
+                logUI("Đang tìm kiếm bề mặt (hãy di chuyển điện thoại chậm)...");
             }
         }
 
