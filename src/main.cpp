@@ -38,9 +38,33 @@ int main() {
 // Receive the hit_matrix and is_placed boolean from Javascript
 extern "C" {
     EMSCRIPTEN_KEEPALIVE
-    void move_player(float dx, float dy) {
-        gameLogic.pX += dx;
-        gameLogic.pY += dy;
+    void move_player(int id, float dx, float dy) {
+        if (gameLogic.players.count(id)) {
+            gameLogic.players[id].x += dx;
+            gameLogic.players[id].y += dy;
+        }
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    void set_multiplayer_info(int is_host, int local_id) {
+        gameLogic.isHost = (is_host != 0);
+        gameLogic.localPlayerId = local_id;
+        gameLogic.reset();
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    float* get_sync_buffer() {
+        return gameLogic.syncBuffer;
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    int pack_state() {
+        return gameLogic.packState();
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    void unpack_state() {
+        gameLogic.unpackState();
     }
 
     EMSCRIPTEN_KEEPALIVE

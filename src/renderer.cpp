@@ -165,58 +165,59 @@ void Renderer::draw(const GameLogic& logic) {
 
     // Step 1: Handle Hit Testing & Placement state
     if (!isPlaced) {
-        // If we haven't placed the game yet, check if we found a physical plane (hitMatrix[3][3] != 0)
         if (hitMatrix[3][3] != 0.0f) {
-            // Draw a targeting Reticle (a green quad) on the physical table
             glm::mat4 reticleModel = hitMatrix;
             reticleModel = glm::rotate(reticleModel, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-            reticleModel = glm::scale(reticleModel, glm::vec3(0.5f, 0.5f, 0.5f)); // 0.5 meter reticle
+            reticleModel = glm::scale(reticleModel, glm::vec3(0.5f, 0.5f, 0.5f));
             setMatrixAndColor(reticleModel, glm::vec3(0.0f, 1.0f, 0.0f));
             
             glBindVertexArray(vao_quad);
             glDrawArrays(GL_TRIANGLES, 0, 6);
         }
-        return; // Don't draw the game until user taps to lock the hit test matrix
+        return; 
     }
 
-    // Step 2: Game is placed. Lock the base world to the physical surface.
+    // Step 2: Game is placed
     glm::mat4 baseWorld = hitMatrix;
-    
-    // WebXR HitTest matrix Y points UP from the table.
-    // Our 2D legacy game relies on X and Y, so it currently stands upright like a wall.
-    // We rotate it by -90 degrees around X so the 2D game lies FLAT on the table
     baseWorld = glm::rotate(baseWorld, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-    
-    // Scale the game down to be 20% of its size (fits perfectly on a desk)
     baseWorld = glm::scale(baseWorld, glm::vec3(0.2f, 0.2f, 0.2f));
 
-    // --- Draw the actual game on the desk ---
-    for (auto it : logic.items) {
-        if (it.active) {
-            glm::mat4 model = glm::translate(baseWorld, glm::vec3(it.x, it.y, 0.0f));
-            model = glm::rotate(model, glm::radians(logic.rot * 0.5f), glm::vec3(0, 0, 1));
-            setMatrixAndColor(model, glm::vec3(1.0f, 0.0f, 0.0f));
-            drawTri();
-        }
+    // Draw Items
+    for (const auto& it : logic.items) {
+        if (!it.active) continue;
+        glm::mat4 model = glm::translate(baseWorld, glm::vec3(it.x, it.y, 0.0f));
+        model = glm::rotate(model, glm::radians(logic.rot * 0.5f), glm::vec3(0, 0, 1));
+        setMatrixAndColor(model, glm::vec3(1.0f, 0.0f, 0.0f)); // Red triangle
+        drawTri();
     }
 
-    for (auto e : logic.enemies) {
-        if (e.active) {
-            glm::mat4 model = glm::translate(baseWorld, glm::vec3(e.x, e.y, 0.0f));
-            setMatrixAndColor(model, glm::vec3(0.8f, 0.2f, 0.8f));
-            glBindVertexArray(vao_quad);
-            glDrawArrays(GL_TRIANGLES, 0, 6);
+    // Draw Enemies
+    for (const auto& e : logic.enemies) {
+        if (!e.active) continue;
+        glm::mat4 model = glm::translate(baseWorld, glm::vec3(e.x, e.y, 0.0f));
+        setMatrixAndColor(model, glm::vec3(0.8f, 0.2f, 0.8f)); // Purple square
+        glBindVertexArray(vao_quad);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
 
-            drawNumber(baseWorld, e.c, e.x, e.y);
-            drawOrbit(baseWorld, e.x, e.y, e.c, logic.rot);
-        }
+        drawNumber(baseWorld, e.c, e.x, e.y);
+        drawOrbit(baseWorld, e.x, e.y, e.c, logic.rot);
     }
 
-    glm::mat4 pModel = glm::translate(baseWorld, glm::vec3(logic.pX, logic.pY, 0.0f));
-    setMatrixAndColor(pModel, glm::vec3(0.2f, 0.6f, 1.0f));
-    glBindVertexArray(vao_poly);
-    glDrawArrays(GL_TRIANGLE_FAN, 0, 32);
+    // Draw all players
+    for (const auto& pair : logic.players) {
+        if (!pair.second.active) continue;
+        const Player& p = pair.second;
+        
+        glm::mat4 pModel = glm::translate(baseWorld, glm::vec3(p.x, p.y, 0.0f));
+        
+        // Colors: Local player is blue, Remote players are orange
+        glm::vec3 pColor = (pair.first == logic.localPlayerId) ? glm::vec3(0.2f, 0.6f, 1.0f) : glm::vec3(1.0f, 0.6f, 0.2f);
+        setMatrixAndColor(pModel, pColor);
+        
+        glBindVertexArray(vao_poly);
+        glDrawArrays(GL_TRIANGLE_FAN, 0, 32);
 
-    drawNumber(baseWorld, logic.pCount, logic.pX, logic.pY);
-    drawOrbit(baseWorld, logic.pX, logic.pY, logic.pCount, logic.rot);
+        drawNumber(baseWorld, p.count, p.x, p.y);
+        drawOrbit(baseWorld, p.x, p.y, p.count, logic.rot);
+    }
 }

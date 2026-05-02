@@ -961,6 +961,10 @@ CMakeFiles/game.dir/src/renderer.cpp.o: \
   D:\DaiHoc\Nam3\LTMCPP\trianglemov\include\glm\gtc\..\mat4x3.hpp \
   D:\DaiHoc\Nam3\LTMCPP\trianglemov\include\glm\gtc\type_ptr.inl \
   D:\DaiHoc\Nam3\LTMCPP\trianglemov\include\game_logic.h \
+  D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\map \
+  D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\__fwd\map.h \
+  D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\__tree \
+  D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\__fwd\set.h \
   D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\iostream \
   D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\istream \
   D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\__ostream\basic_ostream.h \

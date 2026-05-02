@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = D:\DaiHoc\Nam3\LTMCPP\trianglemov
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\DAIHOC\Nam3\LTMCPP\trianglemov\build
+CMAKE_BINARY_DIR = D:\DaiHoc\Nam3\LTMCPP\trianglemov\build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -84,14 +84,14 @@ clean: CMakeFiles/game.dir/clean
 CMakeFiles/game.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\DAIHOC\Nam3\LTMCPP\trianglemov\build\CMakeFiles --progress-num=1,2,3,4 "Built target game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\DaiHoc\Nam3\LTMCPP\trianglemov\build\CMakeFiles --progress-num=1,2,3,4 "Built target game"
 .PHONY : CMakeFiles/game.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/game.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\DAIHOC\Nam3\LTMCPP\trianglemov\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\DaiHoc\Nam3\LTMCPP\trianglemov\build\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/game.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\DAIHOC\Nam3\LTMCPP\trianglemov\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\DaiHoc\Nam3\LTMCPP\trianglemov\build\CMakeFiles 0
 .PHONY : CMakeFiles/game.dir/rule
 
 # Convenience name for target.
@@ -101,7 +101,7 @@ game: CMakeFiles/game.dir/rule
 # codegen rule for target.
 CMakeFiles/game.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\game.dir\build.make CMakeFiles/game.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\DAIHOC\Nam3\LTMCPP\trianglemov\build\CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\DaiHoc\Nam3\LTMCPP\trianglemov\build\CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target game"
 .PHONY : CMakeFiles/game.dir/codegen
 
 # clean rule for target.

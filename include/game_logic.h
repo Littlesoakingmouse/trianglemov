@@ -1,24 +1,46 @@
 #pragma once
 #include <vector>
+#include <map>
 
-struct Obj { 
-    float x, y; 
-    int c; 
-    bool active; 
+struct Item {
+    float x, y;
+    bool active;
+};
+
+struct Enemy {
+    float x, y;
+    int c;
+    bool active;
+};
+
+struct Player {
+    float x, y;
+    int count;
+    bool active;
 };
 
 class GameLogic {
 public:
-    // Game state
-    float pX = 0, pY = 0, pZ = -2.0f; // Positioned slightly in front of the camera in WebXR
-    float rot = 0;
-    int pCount = 0;
+    void init();
+    void update();
+    void reset();
+
+    std::map<int, Player> players;
+    float rot;
+    std::vector<Item> items;
+    std::vector<Enemy> enemies;
+    
     bool isOver = false;
     bool isWin = false;
 
-    std::vector<Obj> items;
-    std::vector<Obj> enemies;
+    bool isHost = true;
+    int localPlayerId = 0;
 
-    void init();
-    void update();
+    float syncBuffer[256];
+    int packState();
+    void unpackState();
+
+private:
+    float dist(float x1, float y1, float x2, float y2);
+    void getTriPos(float bx, float by, int i, int total, float& tx, float& ty);
 };

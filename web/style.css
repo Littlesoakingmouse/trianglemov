@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -23,7 +24,48 @@ body, html {
     top: 20px;
     left: 20px;
     z-index: 10;
-    pointer-events: none; /* Let touches pass through to canvas */
+    pointer-events: none;
+    /* Let touches pass through to canvas */
+}
+
+button,
+.menu-btn {
+    pointer-events: auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    touch-action: manipulation;
+    width: 200px;
+    margin: 10px 0;
+}
+
+button:disabled,
+.menu-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+button:active,
+.menu-btn:active {
+    background-color: #0056b3;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#input-room-code {
+    pointer-events: auto;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    width: 160px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
 }
 
 #ar-button {
@@ -36,7 +78,7 @@ body, html {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s;
 }
 
@@ -66,23 +108,27 @@ body, html {
     gap: 10px;
     pointer-events: auto;
 }
+
 .dpad-row {
     display: flex;
     gap: 10px;
 }
+
 .dpad-btn {
     width: 60px;
     height: 60px;
     font-size: 28px;
     font-weight: bold;
     border-radius: 30px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     color: white;
     border: 2px solid white;
     backdrop-filter: blur(4px);
-    touch-action: manipulation; /* Prevent zooming */
+    touch-action: manipulation;
+    /* Prevent zooming */
     cursor: pointer;
 }
+
 .dpad-btn:active {
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
 }

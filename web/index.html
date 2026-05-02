@@ -12,11 +12,36 @@
 
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script>eruda.init();</script>
+    
+    <!-- Socket.IO library provided by the Node server -->
+    <script src="/socket.io/socket.io.js"></script>
+
     <div id="ui-container">
         <h1>WebAR Game</h1>
-        <button id="ar-button">Start AR Session</button>
-        <p id="status">Loading WASM...</p>
+        
+        <!-- Screen 1: Mode Selection -->
+        <div id="lobby-screen">
+            <button id="btn-singleplayer" class="menu-btn">Single Player</button>
+            <button id="btn-multiplayer" class="menu-btn">Multiplayer</button>
+        </div>
 
+        <!-- Screen 2: Multiplayer Room -->
+        <div id="multiplayer-screen" style="display: none;">
+            <button id="btn-create-room" class="menu-btn">Create Room</button>
+            <div style="margin: 15px 0; color: white;">OR</div>
+            <input type="text" id="input-room-code" placeholder="4-digit code" maxlength="4" />
+            <button id="btn-join-room" class="menu-btn">Join Room</button>
+            <button id="btn-back" class="menu-btn" style="margin-top: 20px; font-size: 14px; background: #555;">Back</button>
+        </div>
+
+        <!-- Screen 3: AR Session Ready -->
+        <div id="ar-screen" style="display: none;">
+            <h2 id="room-info" style="color: #0f0; display: none;">Room: <span id="display-room-code"></span></h2>
+            <button id="ar-button">Start AR Session</button>
+            <p id="status">Loading WASM...</p>
+        </div>
+
+        <!-- In-Game D-Pad -->
         <div id="dpad" style="display: none;">
             <div class="dpad-row"><button id="btn-up" class="dpad-btn">↑</button></div>
             <div class="dpad-row">

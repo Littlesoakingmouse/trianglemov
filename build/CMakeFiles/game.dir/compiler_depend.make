@@ -199,13 +199,28 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__exception/terminate.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__format/enable_insertable.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binary_function.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binary_negate.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/bind.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binder1st.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binder2nd.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/boyer_moore_searcher.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/default_searcher.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/function.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/hash.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/identity.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/invoke.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/is_transparent.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/mem_fn.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/mem_fun_ref.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/not_fn.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/operations.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/perfect_forward.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/pointer_to_binary_function.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/pointer_to_unary_function.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/ranges_operations.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/reference_wrapper.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/unary_function.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/unary_negate.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/weak_result_type.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/array.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/bit_reference.h \
@@ -215,10 +230,12 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/functional.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/ios.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/istream.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/map.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/memory.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/memory_resource.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/ostream.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/pair.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/set.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/sstream.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/streambuf.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/string.h \
@@ -227,6 +244,7 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/tuple.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/variant.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/vector.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__hash_table \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__ios/fpos.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/access.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/advance.h \
@@ -238,6 +256,7 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/default_sentinel.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/distance.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/empty.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/erase_if_container.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/front_insert_iterator.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/incrementable_traits.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/insert_iterator.h \
@@ -253,6 +272,7 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/ostream_iterator.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/ostreambuf_iterator.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/prev.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/ranges_iterator_traits.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/readable_traits.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/reverse_access.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/reverse_iterator.h \
@@ -341,6 +361,7 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__new/new_handler.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__new/nothrow_t.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__new/placement_new_delete.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__node_handle \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__numeric/partial_sum.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__random/is_valid.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__random/log2.h \
@@ -372,6 +393,7 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/poll_with_backoff.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/support.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/support/pthread.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tree \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/find_index.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/ignore.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/make_tuple_types.h \
@@ -388,6 +410,7 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/aligned_storage.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/aligned_union.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/alignment_of.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/can_extract_key.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/common_reference.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/common_type.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/conditional.h \
@@ -483,6 +506,7 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/reference_constructs_from_temporary.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_all_extents.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_const.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_const_ref.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_cv.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_cvref.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_extent.h \
@@ -490,6 +514,7 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_reference.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_volatile.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/result_of.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/strip_signature.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/type_identity.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/type_list.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/underlying_type.h \
@@ -551,12 +576,14 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cwctype \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/errno.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/exception \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/functional \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/initializer_list \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/ios \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/iosfwd \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/iterator \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/limits \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/locale \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/map \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/math.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/memory \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/mutex \
@@ -575,6 +602,7 @@ CMakeFiles/game.dir/src/game_logic.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/tuple \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/type_traits \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/typeinfo \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/unordered_map \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/utility \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/variant \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/vector \
@@ -860,11 +888,13 @@ CMakeFiles/game.dir/src/main.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/main.c
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/functional.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/ios.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/istream.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/map.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/memory.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/memory_resource.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/ostream.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/pair.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/queue.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/set.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/sstream.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/stack.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/streambuf.h \
@@ -1025,6 +1055,7 @@ CMakeFiles/game.dir/src/main.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/main.c
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/poll_with_backoff.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/support.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/support/pthread.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tree \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/find_index.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/ignore.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/make_tuple_types.h \
@@ -1223,6 +1254,7 @@ CMakeFiles/game.dir/src/main.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/main.c
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/iterator \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/limits \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/locale \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/map \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/math.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/memory \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/mutex \
@@ -1855,11 +1887,13 @@ CMakeFiles/game.dir/src/renderer.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/re
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/functional.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/ios.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/istream.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/map.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/memory.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/memory_resource.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/ostream.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/pair.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/queue.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/set.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/sstream.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/stack.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/streambuf.h \
@@ -2020,6 +2054,7 @@ CMakeFiles/game.dir/src/renderer.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/re
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/poll_with_backoff.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/support.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/support/pthread.h \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tree \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/find_index.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/ignore.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/make_tuple_types.h \
@@ -2218,6 +2253,7 @@ CMakeFiles/game.dir/src/renderer.cpp.o: D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/re
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/iterator \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/limits \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/locale \
+  D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/map \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/math.h \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/memory \
   D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/mutex \
@@ -2639,9 +2675,9 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__a
 
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/quaternion_geometric.hpp:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/bind.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/bind.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/sfinae_helpers.h:
 
@@ -2706,6 +2742,8 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/ini
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__algorithm/copy_backward.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory/allocator_destructor.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/is_transparent.h:
 
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/matrix_float2x4.hpp:
 
@@ -2809,9 +2847,9 @@ D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/detail/compute_vector_relational.h
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_signed.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/function.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__algorithm/min.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/function.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/wctype.h:
 
@@ -2921,8 +2959,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/KHR/khrpla
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__algorithm/remove_copy_if.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/void_t.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__algorithm/remove_if.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__exception/exception_ptr.h:
@@ -2962,8 +2998,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__t
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/string.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__concepts/equality_comparable.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/type_identity.h:
 
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/detail/func_exponential.inl:
 
@@ -3012,6 +3046,10 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__a
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__atomic/kill_dependency.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_integral.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/ostream:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__node_handle:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cstddef:
 
@@ -3123,8 +3161,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__c
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__charconv/to_chars_result.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/forward.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__charconv/traits.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__chrono/time_point.h:
@@ -3159,9 +3195,9 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__t
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__compare/three_way_comparable.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/boyer_moore_searcher.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__concepts/arithmetic.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/boyer_moore_searcher.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/bounded_iter.h:
 
@@ -3283,10 +3319,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__i
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__cstddef/size_t.h:
 
-D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/vector_uint4_sized.hpp:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/no_destroy.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_macros.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__debug_utils/randomize_range.h:
@@ -3327,15 +3359,45 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__n
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binary_function.h:
 
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binary_negate.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binder1st.h:
+
+D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/matrix_projection.hpp:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binder2nd.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/move_sentinel.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/default_searcher.h:
+
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/identity.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/invoke.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__locale_dir/wbuffer_convert.h:
 
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/mem_fn.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_same.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/mem_fun_ref.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/not_fn.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/container_traits.h:
+
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/detail/setup.hpp:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/operations.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/perfect_forward.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/pointer_to_binary_function.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdlib.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/pointer_to_unary_function.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/ranges_operations.h:
 
@@ -3352,6 +3414,8 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__f
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_class.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/concepts.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/unary_negate.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__math/copysign.h:
 
@@ -3389,6 +3453,10 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__r
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_unqualified.h:
 
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/errno.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/map.h:
+
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/matrix_transform.hpp:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/lib/clang/23/include/stdbool.h:
@@ -3403,8 +3471,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__m
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/memory_resource.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/element_count.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/rel_ops.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/ostream.h:
@@ -3412,6 +3478,10 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__f
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/pair.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__locale_dir/scan_keyword.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__locale_dir/get_c_locale.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/set.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/sched.h:
 
@@ -3437,6 +3507,16 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__t
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/vector.h:
 
+D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/gtc/epsilon.inl:
+
+D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/vector_double3.hpp:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/iter_swap.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__numeric/partial_sum.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__hash_table:
+
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__ios/fpos.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/prev.h:
@@ -3447,15 +3527,17 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__i
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/back_insert_iterator.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/default_sentinel.h:
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory_resource/polymorphic_allocator.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/as_const.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory_resource/polymorphic_allocator.h:
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/default_sentinel.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/distance.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__math/gamma.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/erase_if_container.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/insert_iterator.h:
 
@@ -3465,25 +3547,19 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__m
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/iter_move.h:
 
-D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/gtc/epsilon.inl:
-
-D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/vector_double3.hpp:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/iter_swap.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__numeric/partial_sum.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_asm.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/move_iterator.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__locale_dir/num.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/move_sentinel.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/ostream_iterator.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/ostreambuf_iterator.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/lib/clang/23/include/limits.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/ranges_iterator_traits.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/readable_traits.h:
 
@@ -3494,8 +3570,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__i
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/unreachable_sentinel.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/wrap_iter.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__locale_dir/get_c_locale.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_fallbacks.h:
 
@@ -3557,10 +3631,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__m
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory/allocator_arg_t.h:
 
-D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/vector_float4_precision.hpp:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/exception_guard.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory/array_cookie.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__random/log2.h:
@@ -3583,13 +3653,13 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__v
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory/destruct_n.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory/is_sufficiently_aligned.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/pair.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory/out_ptr.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__string/extern_template_lists.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/pair.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory/is_sufficiently_aligned.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__memory/noexcept_move_assign_container.h:
 
@@ -3667,6 +3737,8 @@ D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/vector_int3_sized.hpp:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__thread/support/pthread.h:
 
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tree:
+
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/ignore.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__tuple/tuple_indices.h:
@@ -3687,15 +3759,13 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__t
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/alignment_of.h:
 
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/can_extract_key.h:
+
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/common_reference.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/common_type.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/conditional.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/not_fn.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/container_traits.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/copy_cv.h:
 
@@ -3783,10 +3853,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__t
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_primary_template.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/mem_fn.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_same.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_scalar.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/lib/clang/23/include/stdint.h:
@@ -3819,6 +3885,10 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cwc
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/promote.h:
 
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/unistd.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_const_ref.h:
+
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_cvref.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_extent.h:
@@ -3829,6 +3899,10 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__t
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/result_of.h:
 
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/strip_signature.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/type_identity.h:
+
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/assert.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/type_list.h:
@@ -3837,27 +3911,35 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/com
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/underlying_type.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/move.h:
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/forward_like.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/unwrap_ref.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/forward_like.h:
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/void_t.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/wget.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__undef_macros:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/declval.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__undef_macros:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/auto_cast.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/convert_to_integral.h:
 
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/element_count.h:
+
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/empty.h:
+
+D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/vector_float4_precision.hpp:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/exception_guard.h:
 
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/geometric.hpp:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/exchange.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/forward.h:
 
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/matrix_double3x2_precision.hpp:
 
@@ -3872,6 +3954,12 @@ D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/detail/type_quat.inl:
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__verbose_trap:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/is_valid_range.h:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/move.h:
+
+D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/vector_uint4_sized.hpp:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/no_destroy.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__utility/swap.h:
 
@@ -3921,6 +4009,8 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/con
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cstdarg:
 
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/map:
+
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cstdio:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/ctype.h:
@@ -3969,15 +4059,13 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/ios
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdexcept:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/pointer_to_unary_function.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdlib.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/tuple:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/type_traits:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/typeinfo:
+
+D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/unordered_map:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/utility:
 
@@ -3996,8 +4084,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/compat/std
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/compat/time.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/ctype.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/errno.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/limits.h:
 
@@ -4041,10 +4127,6 @@ D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/lib/clang/23/include/__stddef_offsetof.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/lib/clang/23/include/__stddef_ptrdiff_t.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/ranges_iterator_traits.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/lib/clang/23/include/limits.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/lib/clang/23/include/stddef.h:
 
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/game_logic.h:
@@ -4053,55 +4135,19 @@ D:/DaiHoc/Nam3/LTMCPP/trianglemov/src/main.cpp:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/GLES3/gl3.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binary_negate.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binder1st.h:
-
-D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/matrix_projection.hpp:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/binder2nd.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/default_searcher.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/is_transparent.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/mem_fun_ref.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/perfect_forward.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/pointer_to_binary_function.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__functional/unary_negate.h:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/deque.h:
 
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/matrix_float2x2.hpp:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/queue.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__hash_table:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__iterator/erase_if_container.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/ostream:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__node_handle:
-
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__ostream/basic_ostream.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__ostream/put_character_sequence.h:
 
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/can_extract_key.h:
-
 D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/matrix_double4x4_precision.hpp:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_char_like_type.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/unistd.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/remove_const_ref.h:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/strip_signature.h:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/bitset:
 
@@ -4114,8 +4160,6 @@ D:/DaiHoc/Nam3/LTMCPP/trianglemov/include/glm/ext/matrix_float4x3_precision.hpp:
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/istream:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/queue:
-
-D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/unordered_map:
 
 D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/console.h:
 

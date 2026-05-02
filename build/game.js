@@ -1180,8 +1180,6 @@ async function createWasm() {
       }
     };
 
-  var _emscripten_date_now = () => Date.now();
-
   var getHeapMax = () =>
       // Stay one Wasm page short of 4GB: while e.g. Chrome is able to allocate
       // full 4GB Wasm memories, the size will wrap back to 0 bytes in Wasm side
@@ -5191,6 +5189,10 @@ function checkIncomingModuleAPI() {
 
 // Imports from the Wasm binary.
 var _move_player = Module['_move_player'] = makeInvalidEarlyAccess('_move_player');
+var _set_multiplayer_info = Module['_set_multiplayer_info'] = makeInvalidEarlyAccess('_set_multiplayer_info');
+var _get_sync_buffer = Module['_get_sync_buffer'] = makeInvalidEarlyAccess('_get_sync_buffer');
+var _pack_state = Module['_pack_state'] = makeInvalidEarlyAccess('_pack_state');
+var _unpack_state = Module['_unpack_state'] = makeInvalidEarlyAccess('_unpack_state');
 var _render_frame = Module['_render_frame'] = makeInvalidEarlyAccess('_render_frame');
 var _main = Module['_main'] = makeInvalidEarlyAccess('_main');
 var _fflush = makeInvalidEarlyAccess('_fflush');
@@ -5210,6 +5212,10 @@ var wasmMemory = makeInvalidEarlyAccess('wasmMemory');
 
 function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['move_player'] != 'undefined', 'missing Wasm export: move_player');
+  assert(typeof wasmExports['set_multiplayer_info'] != 'undefined', 'missing Wasm export: set_multiplayer_info');
+  assert(typeof wasmExports['get_sync_buffer'] != 'undefined', 'missing Wasm export: get_sync_buffer');
+  assert(typeof wasmExports['pack_state'] != 'undefined', 'missing Wasm export: pack_state');
+  assert(typeof wasmExports['unpack_state'] != 'undefined', 'missing Wasm export: unpack_state');
   assert(typeof wasmExports['render_frame'] != 'undefined', 'missing Wasm export: render_frame');
   assert(typeof wasmExports['main'] != 'undefined', 'missing Wasm export: main');
   assert(typeof wasmExports['fflush'] != 'undefined', 'missing Wasm export: fflush');
@@ -5225,7 +5231,11 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['emscripten_stack_get_current'] != 'undefined', 'missing Wasm export: emscripten_stack_get_current');
   assert(typeof wasmExports['memory'] != 'undefined', 'missing Wasm export: memory');
   assert(typeof wasmExports['__indirect_function_table'] != 'undefined', 'missing Wasm export: __indirect_function_table');
-  _move_player = Module['_move_player'] = createExportWrapper('move_player', 2);
+  _move_player = Module['_move_player'] = createExportWrapper('move_player', 3);
+  _set_multiplayer_info = Module['_set_multiplayer_info'] = createExportWrapper('set_multiplayer_info', 2);
+  _get_sync_buffer = Module['_get_sync_buffer'] = createExportWrapper('get_sync_buffer', 0);
+  _pack_state = Module['_pack_state'] = createExportWrapper('pack_state', 0);
+  _unpack_state = Module['_unpack_state'] = createExportWrapper('unpack_state', 0);
   _render_frame = Module['_render_frame'] = createExportWrapper('render_frame', 4);
   _main = Module['_main'] = createExportWrapper('main', 2);
   _fflush = createExportWrapper('fflush', 1);
@@ -5252,8 +5262,6 @@ var wasmImports = {
   _abort_js: __abort_js,
   /** @export */
   _tzset_js: __tzset_js,
-  /** @export */
-  emscripten_date_now: _emscripten_date_now,
   /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */

@@ -682,6 +682,10 @@ CMakeFiles/game.dir/src/main.cpp.o: \
   D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\print \
   D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\unistd.h \
   D:\DaiHoc\Nam3\LTMCPP\trianglemov\include\game_logic.h \
+  D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\map \
+  D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\__fwd\map.h \
+  D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\__tree \
+  D:\DaiHoc\Nam3\LTMCPP\emsdk\upstream\emscripten\cache\sysroot\include\c++\v1\__fwd\set.h \
   D:\DaiHoc\Nam3\LTMCPP\trianglemov\include\renderer.h \
   D:\DaiHoc\Nam3\LTMCPP\trianglemov\include\glm\glm.hpp \
   D:\DaiHoc\Nam3\LTMCPP\trianglemov\include\glm\detail\_fixes.hpp \

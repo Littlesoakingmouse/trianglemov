@@ -7,6 +7,11 @@ let xrHitTestSource = null;
 let glContext = null;
 let isPlaced = false;
 
+// Multiplayer variables
+let socket = null;
+let isHost = true;
+let localPlayerId = 0;
+
 // Pointers for WASM memory
 let viewPtr = null;
 let projPtr = null;
@@ -45,6 +50,7 @@ function setupDPad() {
 
 arButton.disabled = true;
 
+// Emscripten's Module object is globally available when game.js loads
 Module.onRuntimeInitialized = () => {
     logUI("1. WASM loaded. Preparing memory...");
     setupDPad();
@@ -69,9 +75,8 @@ function checkARSupport() {
     if (navigator.xr) {
         navigator.xr.isSessionSupported('immersive-ar').then((supported) => {
             if (supported) {
-                logUI("AR is Ready! Press the button below.");
-                arButton.disabled = false;
-                arButton.addEventListener('click', onARButtonClicked);
+                logUI("AR is Ready! Select a mode above.");
+                setupLobbyUI();
             } else {
                 logUI("Error: AR not supported on this device.");
             }
@@ -80,6 +85,96 @@ function checkARSupport() {
         logUI("Error: WebXR not available.");
     }
 }
+
+// --- LOBBY & MULTIPLAYER LOGIC ---
+function setupSocketListeners() {
+    socket.on('client_input', (data) => {
+        if (isHost) {
+            Module.ccall('move_player', null, ['number', 'number', 'number'], [data.playerId, data.dx, data.dy]);
+        }
+    });
+
+    socket.on('game_state', (data) => {
+        if (!isHost) {
+            const syncPtr = Module.ccall('get_sync_buffer', 'number', [], []);
+            const syncArray = new Float32Array(Module.HEAPF32.buffer, syncPtr, data.length);
+            syncArray.set(data);
+            Module.ccall('unpack_state', null, [], []);
+        }
+    });
+
+    socket.on('player_joined', (data) => {
+        logUI("Player " + data.playerId + " joined!");
+    });
+}
+
+function setupLobbyUI() {
+    const s1 = document.getElementById('lobby-screen');
+    const s2 = document.getElementById('multiplayer-screen');
+    const s3 = document.getElementById('ar-screen');
+
+    document.getElementById('btn-singleplayer').addEventListener('click', () => {
+        isHost = true;
+        localPlayerId = 0;
+        Module.ccall('set_multiplayer_info', null, ['number', 'number'], [1, 0]);
+        s1.style.display = 'none';
+        s3.style.display = 'block';
+        arButton.disabled = false;
+        arButton.addEventListener('click', onARButtonClicked);
+    });
+
+    document.getElementById('btn-multiplayer').addEventListener('click', () => {
+        s1.style.display = 'none';
+        s2.style.display = 'block';
+    });
+
+    document.getElementById('btn-back').addEventListener('click', () => {
+        s2.style.display = 'none';
+        s1.style.display = 'block';
+    });
+
+    document.getElementById('btn-create-room').addEventListener('click', () => {
+        if (!socket) socket = io();
+        setupSocketListeners();
+        socket.emit('create_room', (res) => {
+            isHost = true;
+            localPlayerId = res.playerId;
+            Module.ccall('set_multiplayer_info', null, ['number', 'number'], [1, res.playerId]);
+            document.getElementById('display-room-code').innerText = res.code;
+            document.getElementById('room-info').style.display = 'block';
+            
+            s2.style.display = 'none';
+            s3.style.display = 'block';
+            arButton.disabled = false;
+            arButton.addEventListener('click', onARButtonClicked);
+        });
+    });
+
+    document.getElementById('btn-join-room').addEventListener('click', () => {
+        const code = document.getElementById('input-room-code').value;
+        if (code.length !== 4) return alert("Enter 4 digit code");
+        if (!socket) socket = io();
+        setupSocketListeners();
+        
+        socket.emit('join_room', code, (res) => {
+            if (res.success) {
+                isHost = false;
+                localPlayerId = res.playerId;
+                Module.ccall('set_multiplayer_info', null, ['number', 'number'], [0, res.playerId]);
+                document.getElementById('display-room-code').innerText = code;
+                document.getElementById('room-info').style.display = 'block';
+                
+                s2.style.display = 'none';
+                s3.style.display = 'block';
+                arButton.disabled = false;
+                arButton.addEventListener('click', onARButtonClicked);
+            } else {
+                alert("Room not found!");
+            }
+        });
+    });
+}
+
 
 function onARButtonClicked() {
     if (!xrSession) {
@@ -102,6 +197,7 @@ function onARButtonClicked() {
 function onSessionStarted(session) {
     xrSession = session;
     arButton.innerText = "End AR Session";
+    document.getElementById('room-info').style.display = 'none'; // Hide code during AR
     logUI("Session Active. Scanning for surfaces...");
 
     try {
@@ -142,6 +238,7 @@ function onSessionEnded() {
     isPlaced = false;
     document.getElementById('dpad').style.display = 'none';
     arButton.innerText = "Start AR Session";
+    document.getElementById('room-info').style.display = 'block'; // Show code again
     logUI("AR Session Ended.");
 }
 
@@ -184,23 +281,44 @@ function onXRFrame(time, frame) {
             Module.HEAPF32.set(projArray, projPtr / 4);
 
             try {
-                if (isPlaced && (moveX !== 0 || moveY !== 0)) {
-                    // Try/catch this optional function in case user forgot to recompile C++
-                    try {
-                        Module.ccall('move_player', null, ['number', 'number'], [moveX * speed, moveY * speed]);
-                    } catch (e) {
-                        console.error("move_player missing (need C++ recompile)", e);
+                if (isPlaced) {
+                    // 1. Process local input
+                    if (moveX !== 0 || moveY !== 0) {
+                        if (isHost) {
+                            Module.ccall('move_player', null, ['number', 'number', 'number'], [localPlayerId, moveX * speed, moveY * speed]);
+                        } else if (socket) {
+                            socket.emit('input_sync', { playerId: localPlayerId, dx: moveX * speed, dy: moveY * speed });
+                        }
                     }
+
+                    // 2. Render the frame
+                    Module.ccall(
+                        'render_frame', 
+                        null, 
+                        ['number', 'number', 'number', 'number'], 
+                        [viewPtr, projPtr, hitPtr, isPlaced ? 1 : 0]
+                    );
+
+                    // 3. Sync state if host
+                    if (isHost && socket) {
+                        const len = Module.ccall('pack_state', 'number', [], []);
+                        const syncPtr = Module.ccall('get_sync_buffer', 'number', [], []);
+                        const syncArray = new Float32Array(Module.HEAPF32.buffer, syncPtr, len);
+                        socket.emit('state_sync', Array.from(syncArray));
+                    }
+                } else {
+                    // Still render the placement reticle
+                    Module.ccall(
+                        'render_frame', 
+                        null, 
+                        ['number', 'number', 'number', 'number'], 
+                        [viewPtr, projPtr, hitPtr, 0]
+                    );
                 }
 
-                Module.ccall(
-                    'render_frame', 
-                    null, 
-                    ['number', 'number', 'number', 'number'], 
-                    [viewPtr, projPtr, hitPtr, isPlaced ? 1 : 0]
-                );
             } catch (err) {
                 logUI("C++ Render Crash: " + err.message);
+                console.error(err);
             }
         }
     }

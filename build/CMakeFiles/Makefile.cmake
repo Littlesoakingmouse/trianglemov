@@ -7,9 +7,6 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "CMakeFiles/4.3.2/CMakeCCompiler.cmake"
-  "CMakeFiles/4.3.2/CMakeCXXCompiler.cmake"
-  "CMakeFiles/4.3.2/CMakeSystem.cmake"
   "D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
   "D:/DaiHoc/Nam3/LTMCPP/share/cmake-4.3/Modules/CMakeCInformation.cmake"
   "D:/DaiHoc/Nam3/LTMCPP/share/cmake-4.3/Modules/CMakeCXXInformation.cmake"
@@ -38,6 +35,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "D:/DaiHoc/Nam3/LTMCPP/share/cmake-4.3/Modules/Platform/Linker/Emscripten-LLD-CXX.cmake"
   "D:/DaiHoc/Nam3/LTMCPP/share/cmake-4.3/Modules/Platform/Linker/Emscripten-LLD.cmake"
   "D:/DaiHoc/Nam3/LTMCPP/trianglemov/CMakeLists.txt"
+  "CMakeFiles/4.3.2/CMakeCCompiler.cmake"
+  "CMakeFiles/4.3.2/CMakeCXXCompiler.cmake"
+  "CMakeFiles/4.3.2/CMakeSystem.cmake"
   )
 
 # The corresponding makefile is:
