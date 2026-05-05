@@ -46,6 +46,18 @@ extern "C" {
     }
 
     EMSCRIPTEN_KEEPALIVE
+    void add_player(int id) {
+        if (!gameLogic.players.count(id)) {
+            gameLogic.players[id] = { 0.1f * id, 0.0f, 0, true };
+        }
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    void remove_player(int id) {
+        gameLogic.players.erase(id);
+    }
+
+    EMSCRIPTEN_KEEPALIVE
     void set_multiplayer_info(int is_host, int local_id) {
         gameLogic.isHost = (is_host != 0);
         gameLogic.localPlayerId = local_id;

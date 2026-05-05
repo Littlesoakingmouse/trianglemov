@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
 
     socket.on('create_room', (callback) => {
         const code = generateRoomCode();
-        rooms[code] = { host: socket.id, clients: [] };
+        rooms[code] = { host: socket.id, clients: [], nextPlayerId: 1 };
         currentRoom = code;
         socket.join(code);
         console.log(`Room created: ${code} by ${socket.id}`);
@@ -41,11 +41,10 @@ io.on('connection', (socket) => {
 
     socket.on('join_room', (code, callback) => {
         if (rooms[code]) {
-            rooms[code].clients.push(socket.id);
+            const playerId = rooms[code].nextPlayerId++;
+            rooms[code].clients.push({ socketId: socket.id, playerId: playerId });
             currentRoom = code;
             socket.join(code);
-            // Assign player ID based on number of clients
-            const playerId = rooms[code].clients.length; 
             console.log(`User ${socket.id} joined room ${code} as Player ${playerId}`);
             callback({ success: true, isHost: false, playerId: playerId });
             
@@ -85,9 +84,12 @@ io.on('connection', (socket) => {
                 delete rooms[currentRoom];
             } else {
                 // Client left
-                rooms[currentRoom].clients = rooms[currentRoom].clients.filter(id => id !== socket.id);
-                // Notify host so they can remove the player
-                io.to(rooms[currentRoom].host).emit('player_left', socket.id); // Or derive playerId
+                const clientIndex = rooms[currentRoom].clients.findIndex(c => c.socketId === socket.id);
+                if (clientIndex !== -1) {
+                    const playerId = rooms[currentRoom].clients[clientIndex].playerId;
+                    rooms[currentRoom].clients.splice(clientIndex, 1);
+                    io.to(rooms[currentRoom].host).emit('player_left', playerId);
+                }
             }
         }
     });

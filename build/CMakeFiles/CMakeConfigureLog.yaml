@@ -2879,3 +2879,68 @@ events:
         - "/"
       CMAKE_FIND_ROOT_PATH: "D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot"
 ...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "D:/DaiHoc/Nam3/LTMCPP/share/cmake-4.3/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "D:/DaiHoc/Nam3/LTMCPP/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\MinGW\\bin"
+        - "E:\\git\\Git\\cmd"
+        - "C:\\Users\\ADMIN\\AppData\\Roaming\\nvm"
+        - "C:\\Program Files\\nodejs"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\msys64\\ucrt64\\bin"
+        - "D:\\DaiHoc\\Nam3\\LTMCPP\\bin"
+        - "C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\"
+        - "C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\Microsoft VS Code\\bin"
+        - "C:\\Users\\ADMIN\\AppData\\Local\\afreeca"
+        - "E:\\Java\\New folder (2)\\IntelliJ IDEA Community Edition 2024.2.1\\bin"
+        - "E:\\Java\\New folder (2)\\IntelliJ IDEA 2024.2.1\\bin"
+        - "C:\\ProgramData\\ADMIN\\GitHubDesktop\\bin"
+        - "C:\\Users\\ADMIN\\AppData\\Roaming\\nvm"
+        - "C:\\Program Files\\nodejs"
+        - "E:\\AI\\Antigravity\\bin"
+      CMAKE_INSTALL_PREFIX: "D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "D:/DaiHoc/Nam3/LTMCPP/emsdk/upstream/emscripten/cache/sysroot"
+...

@@ -25,27 +25,81 @@ function logUI(msg) {
     console.log("[WebAR] " + msg);
 }
 
-// --- D-Pad Logic ---
+// --- Joystick Logic ---
 let moveX = 0;
 let moveY = 0;
 const speed = 0.05;
 
-function setupDPad() {
-    const bindBtn = (id, dx, dy) => {
-        const btn = document.getElementById(id);
-        if (!btn) return;
-        const start = (e) => { e.preventDefault(); moveX = dx; moveY = dy; };
-        const end = (e) => { e.preventDefault(); moveX = 0; moveY = 0; };
-        btn.addEventListener('touchstart', start, {passive: false});
-        btn.addEventListener('touchend', end);
-        btn.addEventListener('mousedown', start);
-        btn.addEventListener('mouseup', end);
-        btn.addEventListener('mouseleave', end);
+function setupJoystick() {
+    const zone = document.getElementById('joystick-zone');
+    const base = document.getElementById('joystick-base');
+    const handle = document.getElementById('joystick-handle');
+    
+    if (!zone || !base || !handle) return;
+    
+    let isDragging = false;
+    let baseRect = null;
+    let maxDist = 0;
+
+    const startDrag = (e) => {
+        isDragging = true;
+        baseRect = base.getBoundingClientRect();
+        maxDist = baseRect.width / 2;
+        handle.style.transition = 'none';
+        updateHandlePosition(e);
     };
-    bindBtn('btn-up', 0, 1);
-    bindBtn('btn-down', 0, -1);
-    bindBtn('btn-left', -1, 0);
-    bindBtn('btn-right', 1, 0);
+
+    const drag = (e) => {
+        if (!isDragging) return;
+        updateHandlePosition(e);
+    };
+
+    const endDrag = () => {
+        isDragging = false;
+        moveX = 0;
+        moveY = 0;
+        handle.style.transform = `translate(-50%, -50%)`;
+        handle.style.transition = 'transform 0.1s ease-out';
+    };
+
+    const updateHandlePosition = (e) => {
+        let clientX, clientY;
+        if (e.touches) {
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
+        } else {
+            clientX = e.clientX;
+            clientY = e.clientY;
+        }
+
+        const centerX = baseRect.left + maxDist;
+        const centerY = baseRect.top + maxDist;
+
+        let dx = clientX - centerX;
+        let dy = clientY - centerY;
+        
+        const dist = Math.hypot(dx, dy);
+        
+        if (dist > maxDist) {
+            dx = (dx / dist) * maxDist;
+            dy = (dy / dist) * maxDist;
+        }
+
+        handle.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
+
+        // Normalize between -1 and 1
+        // Note: Y-axis is inverted for game logic (up is +Y in game, but -Y in DOM)
+        moveX = dx / maxDist;
+        moveY = -dy / maxDist; 
+    };
+
+    zone.addEventListener('touchstart', startDrag, { passive: false });
+    zone.addEventListener('touchmove', (e) => { e.preventDefault(); drag(e); }, { passive: false });
+    zone.addEventListener('touchend', endDrag);
+    
+    zone.addEventListener('mousedown', startDrag);
+    window.addEventListener('mousemove', drag);
+    window.addEventListener('mouseup', endDrag);
 }
 
 arButton.disabled = true;
@@ -53,15 +107,15 @@ arButton.disabled = true;
 // Emscripten's Module object is globally available when game.js loads
 Module.onRuntimeInitialized = () => {
     logUI("1. WASM loaded. Preparing memory...");
-    setupDPad();
-    
+    setupJoystick();
+
     viewPtr = Module._malloc(64);
     projPtr = Module._malloc(64);
     hitPtr = Module._malloc(64);
 
     const canvas = document.getElementById('canvas');
     glContext = canvas.getContext('webgl2');
-    
+
     if (!glContext) {
         logUI("Error: WebGL2 context not found!");
         return;
@@ -105,6 +159,16 @@ function setupSocketListeners() {
 
     socket.on('player_joined', (data) => {
         logUI("Player " + data.playerId + " joined!");
+        if (isHost) {
+            Module.ccall('add_player', null, ['number'], [data.playerId]);
+        }
+    });
+
+    socket.on('player_left', (playerId) => {
+        logUI("Player " + playerId + " left.");
+        if (isHost) {
+            Module.ccall('remove_player', null, ['number'], [playerId]);
+        }
     });
 }
 
@@ -142,7 +206,7 @@ function setupLobbyUI() {
             Module.ccall('set_multiplayer_info', null, ['number', 'number'], [1, res.playerId]);
             document.getElementById('display-room-code').innerText = res.code;
             document.getElementById('room-info').style.display = 'block';
-            
+
             s2.style.display = 'none';
             s3.style.display = 'block';
             arButton.disabled = false;
@@ -155,7 +219,7 @@ function setupLobbyUI() {
         if (code.length !== 4) return alert("Enter 4 digit code");
         if (!socket) socket = io();
         setupSocketListeners();
-        
+
         socket.emit('join_room', code, (res) => {
             if (res.success) {
                 isHost = false;
@@ -163,7 +227,7 @@ function setupLobbyUI() {
                 Module.ccall('set_multiplayer_info', null, ['number', 'number'], [0, res.playerId]);
                 document.getElementById('display-room-code').innerText = code;
                 document.getElementById('room-info').style.display = 'block';
-                
+
                 s2.style.display = 'none';
                 s3.style.display = 'block';
                 arButton.disabled = false;
@@ -225,10 +289,10 @@ function onSessionStarted(session) {
 }
 
 function onSelect() {
-    if (!isPlaced && hitArray[15] !== 0) { 
+    if (!isPlaced && hitArray[15] !== 0) {
         isPlaced = true;
         logUI("Game Placed on Table! Enjoy!");
-        document.getElementById('dpad').style.display = 'flex';
+        document.getElementById('joystick-zone').style.display = 'flex';
     }
 }
 
@@ -236,7 +300,7 @@ function onSessionEnded() {
     xrSession = null;
     xrHitTestSource = null;
     isPlaced = false;
-    document.getElementById('dpad').style.display = 'none';
+    document.getElementById('joystick-zone').style.display = 'none';
     arButton.innerText = "Start AR Session";
     document.getElementById('room-info').style.display = 'block'; // Show code again
     logUI("AR Session Ended.");
@@ -268,9 +332,9 @@ function onXRFrame(time, frame) {
         }
 
         if (!hitFound && !isPlaced) {
-            hitArray.fill(0); 
+            hitArray.fill(0);
         }
-        
+
         Module.HEAPF32.set(hitArray, hitPtr / 4);
 
         for (const view of pose.views) {
@@ -293,9 +357,9 @@ function onXRFrame(time, frame) {
 
                     // 2. Render the frame
                     Module.ccall(
-                        'render_frame', 
-                        null, 
-                        ['number', 'number', 'number', 'number'], 
+                        'render_frame',
+                        null,
+                        ['number', 'number', 'number', 'number'],
                         [viewPtr, projPtr, hitPtr, isPlaced ? 1 : 0]
                     );
 
@@ -309,9 +373,9 @@ function onXRFrame(time, frame) {
                 } else {
                     // Still render the placement reticle
                     Module.ccall(
-                        'render_frame', 
-                        null, 
-                        ['number', 'number', 'number', 'number'], 
+                        'render_frame',
+                        null,
+                        ['number', 'number', 'number', 'number'],
                         [viewPtr, projPtr, hitPtr, 0]
                     );
                 }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>WebAR C++/WASM Game</title>
+    <link rel="stylesheet" href="web/style.css">
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+    <div id="ui-container">
+        <h1>TriangleMov</h1>
+
+        <!-- Lobby Screen -->
+        <div id="lobby-screen">
+            <button id="btn-singleplayer" class="menu-btn">Chơi Đơn</button>
+            <button id="btn-multiplayer" class="menu-btn">Chơi Nhiều Người</button>
+        </div>
+
+        <!-- Multiplayer Screen -->
+        <div id="multiplayer-screen" style="display: none;">
+            <button id="btn-create-room" class="menu-btn">Tạo Phòng</button>
+            <br><br>
+            <input type="text" id="input-room-code" placeholder="Mã Phòng 4 số" maxlength="4">
+            <br>
+            <button id="btn-join-room" class="menu-btn">Vào Phòng</button>
+            <br><br>
+            <button id="btn-back" class="menu-btn">Quay Lại</button>
+        </div>
+
+        <!-- AR Screen -->
+        <div id="ar-screen" style="display: none;">
+            <div id="room-info" style="display: none; font-size: 18px; margin-bottom: 10px;">
+                Mã Phòng: <strong id="display-room-code"></strong>
+            </div>
+            <button id="ar-button">Bắt Đầu Game</button>
+            <p id="status">Loading WASM...</p>
+
+            <div id="joystick-zone" style="display: none;">
+                <div id="joystick-base">
+                    <div id="joystick-handle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The WebGL canvas that Emscripten and WebXR will use -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Socket.io for Multiplayer -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+    <!-- The compiled Emscripten JS glue code -->
+    <script src="build/game.js"></script>
+
+    <!-- Our WebXR Manager -->
+    <script src="web/ar_manager.js"></script>
+
+
+</body>
+
+</html>

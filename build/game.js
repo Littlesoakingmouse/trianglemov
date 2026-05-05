@@ -5189,6 +5189,8 @@ function checkIncomingModuleAPI() {
 
 // Imports from the Wasm binary.
 var _move_player = Module['_move_player'] = makeInvalidEarlyAccess('_move_player');
+var _add_player = Module['_add_player'] = makeInvalidEarlyAccess('_add_player');
+var _remove_player = Module['_remove_player'] = makeInvalidEarlyAccess('_remove_player');
 var _set_multiplayer_info = Module['_set_multiplayer_info'] = makeInvalidEarlyAccess('_set_multiplayer_info');
 var _get_sync_buffer = Module['_get_sync_buffer'] = makeInvalidEarlyAccess('_get_sync_buffer');
 var _pack_state = Module['_pack_state'] = makeInvalidEarlyAccess('_pack_state');
@@ -5212,6 +5214,8 @@ var wasmMemory = makeInvalidEarlyAccess('wasmMemory');
 
 function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['move_player'] != 'undefined', 'missing Wasm export: move_player');
+  assert(typeof wasmExports['add_player'] != 'undefined', 'missing Wasm export: add_player');
+  assert(typeof wasmExports['remove_player'] != 'undefined', 'missing Wasm export: remove_player');
   assert(typeof wasmExports['set_multiplayer_info'] != 'undefined', 'missing Wasm export: set_multiplayer_info');
   assert(typeof wasmExports['get_sync_buffer'] != 'undefined', 'missing Wasm export: get_sync_buffer');
   assert(typeof wasmExports['pack_state'] != 'undefined', 'missing Wasm export: pack_state');
@@ -5232,6 +5236,8 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['memory'] != 'undefined', 'missing Wasm export: memory');
   assert(typeof wasmExports['__indirect_function_table'] != 'undefined', 'missing Wasm export: __indirect_function_table');
   _move_player = Module['_move_player'] = createExportWrapper('move_player', 3);
+  _add_player = Module['_add_player'] = createExportWrapper('add_player', 1);
+  _remove_player = Module['_remove_player'] = createExportWrapper('remove_player', 1);
   _set_multiplayer_info = Module['_set_multiplayer_info'] = createExportWrapper('set_multiplayer_info', 2);
   _get_sync_buffer = Module['_get_sync_buffer'] = createExportWrapper('get_sync_buffer', 0);
   _pack_state = Module['_pack_state'] = createExportWrapper('pack_state', 0);
