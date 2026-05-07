@@ -5195,6 +5195,8 @@ var _set_multiplayer_info = Module['_set_multiplayer_info'] = makeInvalidEarlyAc
 var _get_sync_buffer = Module['_get_sync_buffer'] = makeInvalidEarlyAccess('_get_sync_buffer');
 var _pack_state = Module['_pack_state'] = makeInvalidEarlyAccess('_pack_state');
 var _unpack_state = Module['_unpack_state'] = makeInvalidEarlyAccess('_unpack_state');
+var _check_game_state = Module['_check_game_state'] = makeInvalidEarlyAccess('_check_game_state');
+var _reset_game = Module['_reset_game'] = makeInvalidEarlyAccess('_reset_game');
 var _render_frame = Module['_render_frame'] = makeInvalidEarlyAccess('_render_frame');
 var _main = Module['_main'] = makeInvalidEarlyAccess('_main');
 var _fflush = makeInvalidEarlyAccess('_fflush');
@@ -5220,6 +5222,8 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['get_sync_buffer'] != 'undefined', 'missing Wasm export: get_sync_buffer');
   assert(typeof wasmExports['pack_state'] != 'undefined', 'missing Wasm export: pack_state');
   assert(typeof wasmExports['unpack_state'] != 'undefined', 'missing Wasm export: unpack_state');
+  assert(typeof wasmExports['check_game_state'] != 'undefined', 'missing Wasm export: check_game_state');
+  assert(typeof wasmExports['reset_game'] != 'undefined', 'missing Wasm export: reset_game');
   assert(typeof wasmExports['render_frame'] != 'undefined', 'missing Wasm export: render_frame');
   assert(typeof wasmExports['main'] != 'undefined', 'missing Wasm export: main');
   assert(typeof wasmExports['fflush'] != 'undefined', 'missing Wasm export: fflush');
@@ -5242,6 +5246,8 @@ function assignWasmExports(wasmExports) {
   _get_sync_buffer = Module['_get_sync_buffer'] = createExportWrapper('get_sync_buffer', 0);
   _pack_state = Module['_pack_state'] = createExportWrapper('pack_state', 0);
   _unpack_state = Module['_unpack_state'] = createExportWrapper('unpack_state', 0);
+  _check_game_state = Module['_check_game_state'] = createExportWrapper('check_game_state', 0);
+  _reset_game = Module['_reset_game'] = createExportWrapper('reset_game', 0);
   _render_frame = Module['_render_frame'] = createExportWrapper('render_frame', 4);
   _main = Module['_main'] = createExportWrapper('main', 2);
   _fflush = createExportWrapper('fflush', 1);

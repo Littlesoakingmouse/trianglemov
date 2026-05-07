@@ -80,6 +80,18 @@ extern "C" {
     }
 
     EMSCRIPTEN_KEEPALIVE
+    int check_game_state() {
+        if (gameLogic.isWin) return 1;
+        if (gameLogic.isOver) return -1;
+        return 0;
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    void reset_game() {
+        gameLogic.init();
+    }
+
+    EMSCRIPTEN_KEEPALIVE
     void render_frame(float* view_matrix, float* projection_matrix, float* hit_matrix, int is_placed) {
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

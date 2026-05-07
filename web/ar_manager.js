@@ -1,5 +1,18 @@
 const arButton = document.getElementById('ar-button');
 const statusText = document.getElementById('status');
+const replayBtn = document.getElementById('replay-btn');
+
+replayBtn.addEventListener('click', () => {
+    if (isHost) {
+        Module.ccall('reset_game', null, [], []);
+        replayBtn.style.display = 'none';
+        document.getElementById('joystick-zone').style.display = 'block';
+        logUI("Game restarted!");
+    } else {
+        if (socket) socket.emit('request_replay');
+        logUI("Requested Host to replay...");
+    }
+});
 let xrSession = null;
 let xrRefSpace = null;
 let xrViewerSpace = null;
@@ -170,6 +183,16 @@ function setupSocketListeners() {
             Module.ccall('remove_player', null, ['number'], [playerId]);
         }
     });
+
+    socket.on('do_replay', () => {
+        if (isHost) {
+            Module.ccall('reset_game', null, [], []);
+        } else {
+            replayBtn.style.display = 'none';
+            document.getElementById('joystick-zone').style.display = 'block';
+            logUI("Game restarted by Host!");
+        }
+    });
 }
 
 function setupLobbyUI() {
@@ -301,6 +324,7 @@ function onSessionEnded() {
     xrHitTestSource = null;
     isPlaced = false;
     document.getElementById('joystick-zone').style.display = 'none';
+    replayBtn.style.display = 'none';
     arButton.innerText = "Start AR Session";
     document.getElementById('room-info').style.display = 'block'; // Show code again
     logUI("AR Session Ended.");
@@ -346,12 +370,29 @@ function onXRFrame(time, frame) {
 
             try {
                 if (isPlaced) {
-                    // 1. Process local input
-                    if (moveX !== 0 || moveY !== 0) {
-                        if (isHost) {
-                            Module.ccall('move_player', null, ['number', 'number', 'number'], [localPlayerId, moveX * speed, moveY * speed]);
-                        } else if (socket) {
-                            socket.emit('input_sync', { playerId: localPlayerId, dx: moveX * speed, dy: moveY * speed });
+                    let gameState = 0;
+                    try {
+                        gameState = Module.ccall('check_game_state', 'number', [], []);
+                    } catch (e) {}
+
+                    if (gameState !== 0) {
+                        if (document.getElementById('joystick-zone').style.display !== 'none') {
+                            document.getElementById('joystick-zone').style.display = 'none';
+                            replayBtn.style.display = 'block';
+                            logUI(gameState === 1 ? "BẠN ĐÃ THẮNG!" : "GAME OVER!");
+                        }
+                    } else {
+                        if (document.getElementById('joystick-zone').style.display === 'none') {
+                            document.getElementById('joystick-zone').style.display = 'block';
+                            replayBtn.style.display = 'none';
+                            logUI("Game On!");
+                        }
+                        if (moveX !== 0 || moveY !== 0) {
+                            if (isHost) {
+                                Module.ccall('move_player', null, ['number', 'number', 'number'], [localPlayerId, moveX * speed, moveY * speed]);
+                            } else if (socket) {
+                                socket.emit('input_sync', { playerId: localPlayerId, dx: moveX * speed, dy: moveY * speed });
+                            }
                         }
                     }
 
@@ -360,7 +401,7 @@ function onXRFrame(time, frame) {
                         'render_frame',
                         null,
                         ['number', 'number', 'number', 'number'],
-                        [viewPtr, projPtr, hitPtr, isPlaced ? 1 : 0]
+                        [viewPtr, projPtr, hitPtr, 1]
                     );
 
                     // 3. Sync state if host

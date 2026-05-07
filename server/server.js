@@ -75,6 +75,12 @@ io.on('connection', (socket) => {
         }
     });
 
+    socket.on('request_replay', () => {
+        if (currentRoom && rooms[currentRoom]) {
+            io.to(rooms[currentRoom].host).emit('do_replay');
+        }
+    });
+
     socket.on('disconnect', () => {
         console.log('User disconnected:', socket.id);
         if (currentRoom && rooms[currentRoom]) {
