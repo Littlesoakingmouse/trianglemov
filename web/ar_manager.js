@@ -1,5 +1,13 @@
 const arButton = document.getElementById('ar-button');
 const statusText = document.getElementById('status');
+const replayBtn = document.getElementById('replay-btn');
+
+replayBtn.addEventListener('click', () => {
+    Module.ccall('reset_game', null, [], []);
+    replayBtn.style.display = 'none';
+    document.getElementById('joystick-zone').style.display = 'block';
+    logUI("Đã chơi lại!");
+});
 let xrSession = null;
 let xrRefSpace = null;
 let xrViewerSpace = null;
@@ -25,29 +33,33 @@ let moveX = 0;
 let moveY = 0;
 const speed = 0.05;
 
-function setupDPad() {
-    const bindBtn = (id, dx, dy) => {
-        const btn = document.getElementById(id);
-        if (!btn) return;
-        const start = (e) => { e.preventDefault(); moveX = dx; moveY = dy; };
-        const end = (e) => { e.preventDefault(); moveX = 0; moveY = 0; };
-        btn.addEventListener('touchstart', start, { passive: false });
-        btn.addEventListener('touchend', end);
-        btn.addEventListener('mousedown', start);
-        btn.addEventListener('mouseup', end);
-        btn.addEventListener('mouseleave', end);
-    };
-    bindBtn('btn-up', 0, 1);
-    bindBtn('btn-down', 0, -1);
-    bindBtn('btn-left', -1, 0);
-    bindBtn('btn-right', 1, 0);
+function setupJoystick() {
+    const zone = document.getElementById('joystick-zone');
+    const joystickManager = nipplejs.create({
+        zone: zone,
+        mode: 'static',
+        position: { left: '50%', top: '50%' },
+        color: 'white',
+        size: 100
+    });
+
+    joystickManager.on('move', (evt, data) => {
+        // nipple.js vector.y is positive when moving UP
+        moveX = data.vector.x;
+        moveY = data.vector.y;
+    });
+
+    joystickManager.on('end', () => {
+        moveX = 0;
+        moveY = 0;
+    });
 }
 
 arButton.disabled = true;
 
 Module.onRuntimeInitialized = () => {
     logUI(" Đã tải WebAssembly. Chuẩn bị...");
-    setupDPad();
+    setupJoystick();
 
     viewPtr = Module._malloc(64);
     projPtr = Module._malloc(64);
@@ -132,7 +144,7 @@ function onSelect() {
     if (!isPlaced && hitArray[15] !== 0) {
         isPlaced = true;
         logUI("Đã xác định được bề mặt, Bắt đầu chơi!");
-        document.getElementById('dpad').style.display = 'flex';
+        document.getElementById('joystick-zone').style.display = 'block';
     }
 }
 
@@ -140,7 +152,8 @@ function onSessionEnded() {
     xrSession = null;
     xrHitTestSource = null;
     isPlaced = false;
-    document.getElementById('dpad').style.display = 'none';
+    document.getElementById('joystick-zone').style.display = 'none';
+    replayBtn.style.display = 'none';
     arButton.innerText = "BẮT ĐẦU GAME";
     logUI("Kết thúc.");
 }
@@ -184,7 +197,20 @@ function onXRFrame(time, frame) {
             Module.HEAPF32.set(projArray, projPtr / 4);
 
             try {
-                if (isPlaced && (moveX !== 0 || moveY !== 0)) {
+                let gameState = 0;
+                if (isPlaced) {
+                    try {
+                        gameState = Module.ccall('check_game_state', 'number', [], []);
+                    } catch (e) { } // In case not recompiled yet
+                }
+
+                if (gameState !== 0) {
+                    if (document.getElementById('joystick-zone').style.display !== 'none') {
+                        document.getElementById('joystick-zone').style.display = 'none';
+                        replayBtn.style.display = 'block';
+                        logUI(gameState === 1 ? "BẠN ĐÃ THẮNG!" : "GAME OVER!");
+                    }
+                } else if (isPlaced && (moveX !== 0 || moveY !== 0)) {
                     // Try/catch this optional function in case user forgot to recompile C++
                     try {
                         Module.ccall('move_player', null, ['number', 'number'], [moveX * speed, moveY * speed]);

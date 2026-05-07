@@ -5191,6 +5191,8 @@ function checkIncomingModuleAPI() {
 
 // Imports from the Wasm binary.
 var _move_player = Module['_move_player'] = makeInvalidEarlyAccess('_move_player');
+var _check_game_state = Module['_check_game_state'] = makeInvalidEarlyAccess('_check_game_state');
+var _reset_game = Module['_reset_game'] = makeInvalidEarlyAccess('_reset_game');
 var _render_frame = Module['_render_frame'] = makeInvalidEarlyAccess('_render_frame');
 var _main = Module['_main'] = makeInvalidEarlyAccess('_main');
 var _fflush = makeInvalidEarlyAccess('_fflush');
@@ -5210,6 +5212,8 @@ var wasmMemory = makeInvalidEarlyAccess('wasmMemory');
 
 function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['move_player'] != 'undefined', 'missing Wasm export: move_player');
+  assert(typeof wasmExports['check_game_state'] != 'undefined', 'missing Wasm export: check_game_state');
+  assert(typeof wasmExports['reset_game'] != 'undefined', 'missing Wasm export: reset_game');
   assert(typeof wasmExports['render_frame'] != 'undefined', 'missing Wasm export: render_frame');
   assert(typeof wasmExports['main'] != 'undefined', 'missing Wasm export: main');
   assert(typeof wasmExports['fflush'] != 'undefined', 'missing Wasm export: fflush');
@@ -5226,6 +5230,8 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['memory'] != 'undefined', 'missing Wasm export: memory');
   assert(typeof wasmExports['__indirect_function_table'] != 'undefined', 'missing Wasm export: __indirect_function_table');
   _move_player = Module['_move_player'] = createExportWrapper('move_player', 2);
+  _check_game_state = Module['_check_game_state'] = createExportWrapper('check_game_state', 0);
+  _reset_game = Module['_reset_game'] = createExportWrapper('reset_game', 0);
   _render_frame = Module['_render_frame'] = createExportWrapper('render_frame', 4);
   _main = Module['_main'] = createExportWrapper('main', 2);
   _fflush = createExportWrapper('fflush', 1);

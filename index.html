@@ -12,19 +12,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script>eruda.init();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.10.1/nipplejs.min.js"></script>
     <div id="ui-container">
         <h1>TriangleMov</h1>
         <button id="ar-button">Bắt Đầu Game</button>
         <p id="status">Loading WASM...</p>
 
-        <div id="dpad" style="display: none;">
-            <div class="dpad-row"><button id="btn-up" class="dpad-btn">↑</button></div>
-            <div class="dpad-row">
-                <button id="btn-left" class="dpad-btn">←</button>
-                <button id="btn-down" class="dpad-btn">↓</button>
-                <button id="btn-right" class="dpad-btn">→</button>
-            </div>
+        <div id="joystick-zone" style="display: none; position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); width: 150px; height: 150px; pointer-events: auto;">
         </div>
+
+        <button id="replay-btn" style="display: none; pointer-events: auto; position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); padding: 15px 30px; font-size: 18px; font-weight: bold; color: white; background-color: #ff3b30; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3); z-index: 100;">CHƠI LẠI</button>
     </div>
 
     <!-- The WebGL canvas that Emscripten and WebXR will use -->

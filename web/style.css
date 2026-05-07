@@ -54,35 +54,3 @@ body, html {
     font-size: 14px;
     color: #ccc;
 }
-
-#dpad {
-    position: fixed;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    pointer-events: auto;
-}
-.dpad-row {
-    display: flex;
-    gap: 10px;
-}
-.dpad-btn {
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
-    font-weight: bold;
-    border-radius: 30px;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    border: 2px solid white;
-    backdrop-filter: blur(4px);
-    touch-action: manipulation; /* Prevent zooming */
-    cursor: pointer;
-}
-.dpad-btn:active {
-    background: rgba(255,255,255,0.5);
-}
