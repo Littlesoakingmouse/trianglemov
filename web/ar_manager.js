@@ -42,77 +42,30 @@ function logUI(msg) {
 let moveX = 0;
 let moveY = 0;
 const speed = 0.05;
+let joystickManager = null;
 
 function setupJoystick() {
     const zone = document.getElementById('joystick-zone');
-    const base = document.getElementById('joystick-base');
-    const handle = document.getElementById('joystick-handle');
-    
-    if (!zone || !base || !handle) return;
-    
-    let isDragging = false;
-    let baseRect = null;
-    let maxDist = 0;
+    if (!zone || joystickManager) return;
 
-    const startDrag = (e) => {
-        isDragging = true;
-        baseRect = base.getBoundingClientRect();
-        maxDist = baseRect.width / 2;
-        handle.style.transition = 'none';
-        updateHandlePosition(e);
-    };
+    joystickManager = nipplejs.create({
+        zone: zone,
+        mode: 'static',
+        position: { left: '50%', top: '50%' },
+        color: 'white',
+        size: 100
+    });
 
-    const drag = (e) => {
-        if (!isDragging) return;
-        updateHandlePosition(e);
-    };
+    joystickManager.on('move', (evt, data) => {
+        // nipple.js vector.y is positive when moving UP
+        moveX = data.vector.x;
+        moveY = data.vector.y;
+    });
 
-    const endDrag = () => {
-        isDragging = false;
+    joystickManager.on('end', () => {
         moveX = 0;
         moveY = 0;
-        handle.style.transform = `translate(-50%, -50%)`;
-        handle.style.transition = 'transform 0.1s ease-out';
-    };
-
-    const updateHandlePosition = (e) => {
-        let clientX, clientY;
-        if (e.touches) {
-            clientX = e.touches[0].clientX;
-            clientY = e.touches[0].clientY;
-        } else {
-            clientX = e.clientX;
-            clientY = e.clientY;
-        }
-
-        const centerX = baseRect.left + maxDist;
-        const centerY = baseRect.top + maxDist;
-
-        let dx = clientX - centerX;
-        let dy = clientY - centerY;
-        
-        const dist = Math.hypot(dx, dy);
-        
-        if (dist > maxDist) {
-            dx = (dx / dist) * maxDist;
-            dy = (dy / dist) * maxDist;
-        }
-
-        handle.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
-
-        // Normalize between -1 and 1
-        // Note: Y-axis is inverted for game logic (up is +Y in game, but -Y in DOM)
-        moveX = dx / maxDist;
-        moveY = -dy / maxDist; 
-    };
-
-    zone.addEventListener('touchstart', startDrag, { passive: false });
-    zone.addEventListener('touchmove', (e) => { e.preventDefault(); drag(e); }, { passive: false });
-    zone.addEventListener('touchend', endDrag);
-    
-    zone.addEventListener('mousedown', startDrag);
-    window.addEventListener('mousemove', drag);
-    window.addEventListener('mouseup', endDrag);
+    });
 }
 
 arButton.disabled = true;
@@ -120,7 +73,6 @@ arButton.disabled = true;
 // Emscripten's Module object is globally available when game.js loads
 Module.onRuntimeInitialized = () => {
     logUI("1. WASM loaded. Preparing memory...");
-    setupJoystick();
 
     viewPtr = Module._malloc(64);
     projPtr = Module._malloc(64);
@@ -315,7 +267,8 @@ function onSelect() {
     if (!isPlaced && hitArray[15] !== 0) {
         isPlaced = true;
         logUI("Game Placed on Table! Enjoy!");
-        document.getElementById('joystick-zone').style.display = 'flex';
+        document.getElementById('joystick-zone').style.display = 'block';
+        setupJoystick();
     }
 }
 

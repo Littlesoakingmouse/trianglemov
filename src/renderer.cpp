@@ -22,6 +22,23 @@ void main() {
 }
 )";
 
+static glm::mat4 manualTranslate(float dx, float dy) {
+    glm::mat4 m(1.0f);
+    m[3][0] = dx;
+    m[3][1] = dy;
+    return m;
+}
+
+static glm::mat4 manualRotateZ(float angle_degree) {
+    float rad = angle_degree * 3.14159f / 180.0f;
+    float c = std::cos(rad);
+    float s = std::sin(rad);
+    glm::mat4 m(1.0f);
+    m[0][0] = c;  m[0][1] = s;
+    m[1][0] = -s; m[1][1] = c;
+    return m;
+}
+
 void Renderer::compileShaders() {
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
@@ -136,10 +153,27 @@ void Renderer::drawNumber(const glm::mat4& baseModel, int num, float x, float y)
 void Renderer::drawOrbit(const glm::mat4& baseModel, float x, float y, int count, float rot) {
     if (count <= 0) return;
     for (int i = 0; i < count; i++) {
-        glm::mat4 model = glm::translate(baseModel, glm::vec3(x, y, 0.0f));
-        model = glm::rotate(model, glm::radians(rot + (i * 360.0f / count)), glm::vec3(0, 0, 1));
-        model = glm::translate(model, glm::vec3(0.25f, 0.0f, 0.0f));
-        model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0, 0, 1));
+        float angle = rot + (i * 360.0f / count);
+
+        // Định dạng tam giác hướng ra ngoài
+        glm::mat4 r_shape = manualRotateZ(-90.0f);
+        
+        // Đặt tam giác ở vị trí tuyệt đối cách tâm (x,y) một khoảng 0.25 theo trục X
+        glm::mat4 t_pos = manualTranslate(x + 0.25f, y);
+
+        // --- BÀI TẬP: Thực hiện phép quay quanh điểm (x,y) thủ công ---
+        // B1. Tịnh tiến điểm về gốc tọa độ
+        glm::mat4 t_to_origin = manualTranslate(-x, -y);
+        
+        // B2. Thực hiện quay
+        glm::mat4 r_rot = manualRotateZ(angle);
+        
+        // B3. Tịnh tiến lại về điểm ban đầu
+        glm::mat4 t_back = manualTranslate(x, y);
+
+        // Nhân các ma trận (thứ tự từ phải sang trái đối với vector)
+        glm::mat4 model = baseModel * t_back * r_rot * t_to_origin * t_pos * r_shape;
+
         setMatrixAndColor(model, glm::vec3(1.0f, 0.0f, 0.0f));
         drawTri();
     }
@@ -185,8 +219,11 @@ void Renderer::draw(const GameLogic& logic) {
     // Draw Items
     for (const auto& it : logic.items) {
         if (!it.active) continue;
-        glm::mat4 model = glm::translate(baseWorld, glm::vec3(it.x, it.y, 0.0f));
-        model = glm::rotate(model, glm::radians(logic.rot * 0.5f), glm::vec3(0, 0, 1));
+        // Thực hiện quay quanh điểm của chính item
+        glm::mat4 t_back = manualTranslate(it.x, it.y);
+        glm::mat4 r_rot = manualRotateZ(logic.rot * 0.5f);
+        glm::mat4 model = baseWorld * t_back * r_rot;
+        
         setMatrixAndColor(model, glm::vec3(1.0f, 0.0f, 0.0f)); // Red triangle
         drawTri();
     }
@@ -194,7 +231,7 @@ void Renderer::draw(const GameLogic& logic) {
     // Draw Enemies
     for (const auto& e : logic.enemies) {
         if (!e.active) continue;
-        glm::mat4 model = glm::translate(baseWorld, glm::vec3(e.x, e.y, 0.0f));
+        glm::mat4 model = baseWorld * manualTranslate(e.x, e.y);
         setMatrixAndColor(model, glm::vec3(0.8f, 0.2f, 0.8f)); // Purple square
         glBindVertexArray(vao_quad);
         glDrawArrays(GL_TRIANGLES, 0, 6);
@@ -208,7 +245,7 @@ void Renderer::draw(const GameLogic& logic) {
         if (!pair.second.active) continue;
         const Player& p = pair.second;
         
-        glm::mat4 pModel = glm::translate(baseWorld, glm::vec3(p.x, p.y, 0.0f));
+        glm::mat4 pModel = baseWorld * manualTranslate(p.x, p.y);
         
         // Colors: Local player is blue, Remote players are orange
         glm::vec3 pColor = (pair.first == logic.localPlayerId) ? glm::vec3(0.2f, 0.6f, 1.0f) : glm::vec3(1.0f, 0.6f, 0.2f);

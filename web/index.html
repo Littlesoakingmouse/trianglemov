@@ -13,13 +13,13 @@
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script>eruda.init();</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.10.1/nipplejs.min.js"></script>
-    
+
     <!-- Socket.IO library provided by the Node server -->
     <script src="/socket.io/socket.io.js"></script>
 
     <div id="ui-container">
         <h1>WebAR Game</h1>
-        
+
         <!-- Screen 1: Mode Selection -->
         <div id="lobby-screen">
             <button id="btn-singleplayer" class="menu-btn">Single Player</button>
@@ -32,7 +32,8 @@
             <div style="margin: 15px 0; color: white;">OR</div>
             <input type="text" id="input-room-code" placeholder="4-digit code" maxlength="4" />
             <button id="btn-join-room" class="menu-btn">Join Room</button>
-            <button id="btn-back" class="menu-btn" style="margin-top: 20px; font-size: 14px; background: #555;">Back</button>
+            <button id="btn-back" class="menu-btn"
+                style="margin-top: 20px; font-size: 14px; background: #555;">Back</button>
         </div>
 
         <!-- Screen 3: AR Session Ready -->
@@ -42,10 +43,13 @@
             <p id="status">Loading WASM...</p>
         </div>
 
-        <div id="joystick-zone" style="display: none; position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); width: 150px; height: 150px; pointer-events: auto;">
+        <div id="joystick-zone"
+            style="display: none; position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); width: 150px; height: 150px; pointer-events: auto;">
         </div>
 
-        <button id="replay-btn" style="display: none; pointer-events: auto; position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); padding: 15px 30px; font-size: 18px; font-weight: bold; color: white; background-color: #ff3b30; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3); z-index: 100;">PLAY AGAIN</button>
+        <button id="replay-btn"
+            style="display: none; pointer-events: auto; position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); padding: 15px 30px; font-size: 18px; font-weight: bold; color: white; background-color: #ff3b30; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3); z-index: 100;">PLAY
+            AGAIN</button>
     </div>
 
     <!-- The WebGL canvas that Emscripten and WebXR will use -->
